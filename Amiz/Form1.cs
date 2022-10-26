@@ -35,6 +35,7 @@ namespace Amiz
 
         private void button1_Click(object sender, EventArgs e)
         {
+            timer1.Interval = Convert.ToInt32(textBox1.Text);
             idx = 2;
             label2.Text = "0";
             isrecord = true;
@@ -50,6 +51,19 @@ namespace Amiz
             isrecord = false;
             idx = 2;
             timesB = 0;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // 引起异常的语句
+                int freq = Convert.ToInt32(textBox1.Text);
+            }
+            catch
+            {
+                textBox1.Text = "100";
+            }
         }
     }
 }
